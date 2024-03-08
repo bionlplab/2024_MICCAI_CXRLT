@@ -47,7 +47,7 @@
 
     <p><span><span>In the first iteration of CXR-LT held in 2023, we expanded upon the <a href="https://physionet.org/content/mimic-cxr-jpg/2.0.0/">MIMIC-CXR-JPG</a> [10,11] dataset by enlarging the set of target classes from 14 to 26, generating labels for 12 new rare disease findings by parsing radiology reports [13]. While this made for a challenging long-tailed, multi-label disease classification task that attracted 59 teams who contributed over 500 unique submissions, Radiology Gamuts Ontology documents over 4,500 unique radiological image findings. That is, the  &ldquo;true&rdquo distribution of all clinical findings on CXR is at least two orders of magnitude longer than what our -- or any existing dataset can offer. For this reason, we argue that the only way to truly tackle the long-tail of radiological image findings is to develop a model that can readily generalize to new classes in &ldquo;zero-shot&rdquo fashion [14].</span></span></p>
 
-    <p><span><span>For this year's version of CXR-LT, we extract labels for an additional 19 rare disease findings (for a total of 377,110 CXR images, each with 45 disease labels) and introduce two new challenge tracks, featuring a zero-shot classification task. We additionally include N=200 images from the Medical Imaging and Data Resource Center (MIDRC) (<a href="https://data.midrc.org/"></a>) for additional evaluation in the second task. </span></span></p>  </div>
+    <p><span><span>For this year's version of CXR-LT, we extract labels for an additional 19 rare disease findings (for a total of 377,110 CXR images, each with 45 disease labels) and introduce two new challenge tracks, featuring a zero-shot classification task. </span></span></p>  </div>
 </div>
 
 <br>
@@ -56,10 +56,10 @@
   <h2>Shared Task</h2>
     <div class="overview">
       <h3> Dataset </h3>
-      <p>In the first iteration of CXR-LT held in 2023, we expanded upon the MIMIC-CXR dataset by enlarging the set of target classes from 14 to 26, generating labels for 12 new rare disease findings by parsing radiology reports. For this year's version of CXR-LT, we extract labels for an additional 19 rare disease findings (for a total of 377,110 CXR images, each with 45 disease labels).</p>
+      <p>In the first iteration of CXR-LT held in 2023, we expanded upon the MIMIC-CXR dataset by enlarging the set of target classes from 14 to 26, generating labels for 12 new rare disease findings by parsing radiology reports. For this year's version of CXR-LT, we extract labels for an additional 19 rare disease findings (for a total of 377,110 CXR images, each with 45 disease labels). We additionally include N=200 images from the Medical Imaging and Data Resource Center (MIDRC) (<a href="https://data.midrc.org/"></a>) for additional evaluation in the second task.</p>
 
       <h3>Task</h3>
-      <p>Given a CXR, detect all pathologies present (or predict “No Finding” if none present). To do this, you will train multi-label thorax disease classifiers on the provided labeled training data.</p>
+      <p>Given a CXR, our challenge includes three tasks, to be held as independent tracks: Task 1: long-tailed classification on a large, noisy test set; Task 2: long-tailed classification in a small, manually annotated test set;  Task 3: zero-shot generalization to previously unseen disease findings. For all tracks, participants will be provided with a large, automatically labeled training set of >250,000 CXR images with 40 binary disease labels. Task (i) will be evaluated on a large, automatically labeled test set of >75,000 CXRs from these same 40 labels; task (ii) will be evaluated on a "gold standard" subset of the test set, containing 409 CXRs from 26 of the 40 labels that were manually annotated; task (iii) will be evaluated on the same large test set of images as task (i), but for 5 "held-out" disease findings that have not been encountered during training. While last year's CXR-LT was a success, we hope that CXR-LT 2024 can provide even further meaningful methodological advances toward clinically realistic multi-label, long-tailed, and zero-shot disease classification on CXR.</p>
 
       <h3>Evaluation</h3>
       <p>Models will be evaluated on the provided testing set using “macro-averaged” mean Average Precision (mAP).
