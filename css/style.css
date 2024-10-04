@@ -111,7 +111,8 @@ a:hover {
 
 .announce_date {
 	font-size: .875em;
-	font-style: italic;
+	/* font-style: italic; */
+	font-weight: bold;
 }
 .announce {
 	font-size: inherit;
